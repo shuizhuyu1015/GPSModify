@@ -30,11 +30,11 @@
     [self.view addSubview:bgImageView];
     
     //百度开发平台拿到的BD坐标
-    CLLocationCoordinate2D bdCoor = CLLocationCoordinate2DMake(25.749347, 123.479754);
+    CLLocationCoordinate2D bdCoor = CLLocationCoordinate2DMake(22.383011, 114.284199);
     //转换成WGS坐标
     CLLocationCoordinate2D wgsCoor = [CoordinateTransform bd09ToWgs84:bdCoor];
     //获取转换后坐标后，记得修改gpx文件里的坐标，才能修改手机虚拟定位
-    NSLog(@"经度 %lf, 纬度 %lf", wgsCoor.longitude, wgsCoor.latitude);
+    NSLog(@"WGS:经度 %lf, 纬度 %lf", wgsCoor.longitude, wgsCoor.latitude);
     
     
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, CGRectGetWidth(self.view.bounds), 40)];
@@ -46,9 +46,9 @@
     
     UILabel *infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, CGRectGetWidth(self.view.bounds)-20, 200)];
     infoLabel.center = self.view.center;
-    NSString *str = @"1、百度地图开放平台搜索想要定位的坐标\n2、Xcode运行程序将BD坐标转为WGS坐标\n3、修改gpx文件坐标\n4、debug-simulator location，选择gpx文件\n5、直接拔线，可保留虚拟定位\n6、点击stop，10-30分钟还原为真实定位";
+    NSString *str = @"1、百度地图开放平台搜索想要定位的坐标\n2、Xcode运行程序将BD坐标转为WGS坐标\n3、修改gpx文件坐标为获取到的WGS坐标\n4、debug-simulator location，选择gpx文件\n5、直接拔线，可保留虚拟定位\n6、点击stop，10-30分钟还原为真实定位";
     infoLabel.text = str;
-    infoLabel.font = [UIFont systemFontOfSize:15];
+    infoLabel.font = [UIFont systemFontOfSize:16];
     infoLabel.textColor = [UIColor whiteColor];
     infoLabel.numberOfLines = 0;
     [self.view addSubview:infoLabel];
