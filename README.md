@@ -5,7 +5,7 @@ __________________________
 =======================
 1、百度地图开放平台搜索想要定位的坐标 （[坐标拾取](http://api.map.baidu.com/lbsapi/getpoint/index.html)）<br>
 2、Xcode运行程序将BD坐标转为WGS坐标<br>
-```
+```Objective-C
 #import "CoordinateTransform.h"
 
 //百度开发平台拿到的BD坐标
@@ -16,7 +16,7 @@ CLLocationCoordinate2D wgsCoor = [CoordinateTransform bd09ToWgs84:bdCoor];
 NSLog(@"WGS:经度 %lf, 纬度 %lf", wgsCoor.longitude, wgsCoor.latitude);
 ```
 3，修改GPX文件(SimulatorLocation.gpx)坐标<br>
-```
+```Objective-C
 <gpx version="1.1"
     creator="GMapToGPX 6.4j - http://www.elsewhere.org/GMapToGPX/"
     xmlns="http://www.topografix.com/GPX/1/1"
