@@ -28,3 +28,7 @@ NSLog(@"WGS:经度 %lf, 纬度 %lf", wgsCoor.longitude, wgsCoor.latitude);
 ```
 4、点击工具栏Debug -> Simulator Location，选择gpx文件<br>
 5、点击stop，10-30分钟还原为真实定位；如想保留时间更长，可直接拔线，重启手机定位会还原<br>
+ 
+ 
+# 其他用法
+[钉钉打卡](https://github.com/shuizhuyu1015/GPSModify/issues/1)
